@@ -13,7 +13,7 @@ en:
           attributes:
             seller:
               cannot_add_line_item_from_different_seller: The cart already contains a product from a different seller
-              no_prices: there are no price for this seller
+              no_prices: has no prices for this item
     models:
       spree/price:
         one: Price

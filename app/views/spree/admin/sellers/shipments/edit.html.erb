@@ -47,7 +47,9 @@
           <tr data-hook="admin_sellers_shipment_line_items_index_rows">
             <td><%= line_item.name %></td>
             <td><%= line_item.sku %></td>
-            <td><%= line_item.quantity %></td>
+            <td>
+              <%= render 'line_item_form', line_item: line_item %>
+            </td>
             <td><%= line_item.display_total.to_html %></td>
           </tr>
         <% end %>

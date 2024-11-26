@@ -1,0 +1,11 @@
+ <%= form_for line_item, url: spree.admin_sellers_shipment_line_item_url(@shipment, line_item) do |f| %>
+  <div class="row">
+    <div class="col-2 ">
+      <%= f.text_field :quantity %>
+      <%= f.error_message_on :quantity %>
+    </div>
+    <div class="col-10">
+      <%= f.submit t('spree.update')%>
+    </div>
+  </div>
+<% end %>

@@ -38,7 +38,12 @@ end
 FactoryBot.modify do
   factory :line_item, class: 'Spree::LineItem' do
     transient do
-      seller_price { variant.prices.with_seller.first || create(:price, seller: create(:seller), variant: variant) }
+      seller_price do
+        variant.prices.with_seller.first || create(:price, seller: create(:seller),
+                                                           variant: variant)
+        # TODO: understand why Insufficient stock for destroy but not for create
+        #  seller_stock_availability: 10)
+      end
     end
     seller do
       seller_price.seller

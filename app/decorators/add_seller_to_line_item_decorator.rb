@@ -3,7 +3,7 @@
 module AddSellerToLineItemDecorator
   def self.prepended(base)
     base.belongs_to :seller, class_name: 'Spree::Seller'
-    base.validate :validate_seller_price_presence, if: -> { variant.present? }
+    base.validate :validate_seller_price_presence, if: -> { seller.present? && variant.present? }
   end
 
   def pricing_options

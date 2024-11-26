@@ -13,7 +13,7 @@ Spree::Core::Engine.routes.draw do
           get :reject
           get :ship
         end
-        resources :line_items, only: [:edit, :update]
+        resources :line_items, only: [:update]
       end
       get :paypal_callbacks, to: 'paypal_callbacks#show'
       get :dashboard, to: 'dashboard#show'
